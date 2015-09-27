@@ -13,3 +13,8 @@ RUN apt-get install -y ubuntu-restricted-addons ubuntu-restricted-extras\
  alsa-utils alsa-tools alsa-base pavucontrol linux-sound-base\
  flashplugin-installer gstreamer1.0 gstreamer0.10-fluendo-mp3 gstreamer1.0-fluendo-mp3 gstreamer1.0-libav
 RUN apt-get update && apt-get install -fy rhythmbox
+
+RUN mkdir /etc/service/rhythmbox
+ADD run /etc/service/rhythmbox/run
+
+VOLUME /music
